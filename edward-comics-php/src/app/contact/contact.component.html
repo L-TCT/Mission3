@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center align-items-center master">
+    <div class="fond">
+        <h2 class="text-center rouge" id="ancre">Contact</h2>
+            <div class="milieu">
+                <div class="d-flex flex-column align-items-center justify-content-center bandeau">
+                    <h3>Besoin d'information ?</h3>
+                    <p>Contactez-nous !</p>
+                </div>
+            </div>
+        
+        <div class="grid-container">
+            <form>
+                <div class="d-flex flex-column mt-2 form-group">
+                    <label class="rouge">Civilité</label>
+                    <div class="d-flex align-items-center">
+                        <input type="radio" name="civilite" id="mme" value="mme">
+                        <label for="mme" class="rouge">&nbsp;Mme</label>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <input type="radio" name="civilite" id="mr" value="mr">
+                        <label for="mr" class="rouge">&nbsp;Mr</label>
+                    </div>
+                </div>
+                <div class="nom-prenom form-group">
+                    <div class="nom">
+                        <label class="rouge">Nom</label>
+                        <input type="text" class="form-control" id="nom">
+                    </div>
+                    <div class="prenom">
+                        <label class="rouge">Prénom</label>
+                        <input type="text" class="form-control" id="prenom">
+                    </div>
+                </div>
+                <div class="proprio-carte form-group">
+                    <label class="rouge">E-mail</label>
+                    <input type="text" class="form-control" id="proprietaire">
+                </div>
+                <div class="nb-carte form-group">
+                    <label class="rouge">Objet de la demande</label>
+                    <input type="text" class="form-control" id="nbCarte">
+                </div>
+                <div class="d-flex flex-column form-group">
+                    <label class="rouge">Message</label>
+                    <textarea name="message" cols="5" rows="5" class="message"></textarea>
+                </div>
+                <div class="d-flex justify-content-end bouton form-group">
+                    <button class="btn btn-primary mt-3" (click)="envoyer()">Envoyer ></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

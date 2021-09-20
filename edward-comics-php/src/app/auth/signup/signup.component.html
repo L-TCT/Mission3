@@ -1,0 +1,187 @@
+<div class="fond">
+  <h2 class="text-center rouge">Inscription</h2>
+  <div class="milieu">
+    <div class="d-flex flex-column align-items-center justify-content-center bandeau">
+      <h3>Nouveau client ?</h3>
+      <p>Inscrivez-vous !</p>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="info-perso">
+      <h6 class="rouge text-center mt-3">Informations personnelle</h6>
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="nom-prenom form-group">
+        <div class="nom">
+          <label class="rouge">Nom</label>
+          <input type="text" maxlength="256" class="form-control" id="nom" formControlName="nom">
+          <!-- /////////////////////////////////////// -->
+          <div *ngIf="signupForm.controls['nom'].invalid && (signupForm.controls['nom'].dirty || signupForm.controls['nom'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="signupForm.controls['nom'].errors?.maxlength">
+              255 caracteres maximum.
+          </div>
+          <div *ngIf="signupForm.controls['nom'].errors?.required">
+            Votre nom est obligatoire !
+        </div>
+          <div *ngIf="signupForm.controls['nom'].errors?.pattern">
+              Lettres uniquement.
+          </div>
+      </div>
+      <!-- /////////////////////////////////////// -->
+        </div>
+        <div class="prenom">
+          <label class="rouge">Prénom</label>
+          <input type="text" maxlength="256" class="form-control" id="prenom" formControlName="prenom">
+          <!-- /////////////////////////////////////// -->
+          <div *ngIf="signupForm.controls['prenom'].invalid && (signupForm.controls['prenom'].dirty || signupForm.controls['prenom'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="signupForm.controls['prenom'].errors?.maxlength">
+              255 caracteres maximum.
+          </div>
+          <div *ngIf="signupForm.controls['prenom'].errors?.required">
+            Votre prenom est obligatoire !
+        </div>
+          <div *ngIf="signupForm.controls['prenom'].errors?.pattern">
+              Lettres uniquement.
+          </div>
+      </div>
+      <!-- /////////////////////////////////////// -->
+        </div>
+      </div>
+      <div class="mail-tel form-group">
+        <div class="email">
+          <label class="rouge" for="email">Adresse mail</label>
+          <input type="text" maxlength="256" id="email" class="form-control" formControlName="email">
+          <!-- /////////////////////////////////////// -->
+          <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="signupForm.controls['email'].errors?.maxlength">
+              255 caracteres maximum.
+          </div>
+          <div *ngIf="signupForm.controls['email'].errors?.required">
+            Votre email est obligatoire !
+        </div>
+          <div *ngIf="signupForm.controls['email'].errors?.email">
+              Mauvais format (email@email.mail).
+          </div>
+      </div>
+      <!-- /////////////////////////////////////// -->
+        </div>
+        <div class="tel">
+          <label class="rouge">Téléphone</label>
+          <input type="tel" maxlength="31" class="form-control" id="telephone" formControlName="telephone">
+          <!-- /////////////////////////////////////// -->
+          <div *ngIf="signupForm.controls['telephone'].invalid && (signupForm.controls['telephone'].dirty || signupForm.controls['telephone'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="signupForm.controls['telephone'].errors?.maxlength">
+              30 caracteres maximum.
+          </div>
+          <div *ngIf="signupForm.controls['telephone'].errors?.required">
+            Votre telephone est obligatoire !
+        </div>
+          <div *ngIf="signupForm.controls['telephone'].errors?.pattern">
+              Chiffres uniquement.
+          </div>
+      </div>
+      <!-- /////////////////////////////////////// -->
+        </div>
+      </div>
+      <div class="mdp-mdpconfirm form-group">
+        <div class="mot-de-passe">
+          <label class="rouge" for="password">Mot de passe</label>
+          <input type="password" maxlength="256" id="password" class="form-control" formControlName="password">
+          <!-- /////////////////////////////////////// -->
+          <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="signupForm.controls['password'].errors?.maxlength">
+              255 caracteres maximum.
+          </div>
+          <div *ngIf="signupForm.controls['password'].errors?.required">
+            Votre password est obligatoire !
+        </div>
+          <div *ngIf="signupForm.controls['password'].errors?.pattern">
+              /!\ Error pattern /!\ contact support /!\
+          </div>
+      </div>
+      <!-- /////////////////////////////////////// -->
+        </div>
+        <div class="mot-de-passe-confirm">
+          <label class="rouge">Confirmation du MdP</label>
+          <input type="password" maxlength="256" class="form-control" formControlName="passwordConfirm">
+          <!-- /////////////////////////////////////// -->
+          <div *ngIf="signupForm.controls['passwordConfirm'].invalid && (signupForm.controls['passwordConfirm'].dirty || signupForm.controls['passwordConfirm'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="signupForm.controls['passwordConfirm'].errors?.maxlength">
+              255 caracteres maximum.
+          </div>
+          <div *ngIf="signupForm.controls['passwordConfirm'].errors?.required">
+            La confirmation du mot de passe est obligatoire !
+        </div>
+          <div *ngIf="signupForm.controls['passwordConfirm'].errors?.mustMatch">
+              Mot de passe different !
+          </div>
+          <div *ngIf="signupForm.controls['passwordConfirm'].errors?.pattern">
+            /!\ Error pattern /!\ contact support /!\
+        </div>
+      </div>
+      <!-- /////////////////////////////////////// -->
+        </div>
+      </div>
+      <div class="info-factu form-group">
+        <h6 class="rouge text-center mt-3">Informations facturation</h6>
+      </div>
+      <div class="adresse form-group">
+        <label class="rouge">Adresse</label>
+        <input type="text" maxlength="256" class="form-control" id="adresse" formControlName="adresse">
+        <!-- /////////////////////////////////////// -->
+        <div *ngIf="signupForm.controls['adresse'].invalid && (signupForm.controls['adresse'].dirty || signupForm.controls['adresse'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="signupForm.controls['adresse'].errors?.maxlength">
+            255 caracteres maximum.
+        </div>
+        <div *ngIf="signupForm.controls['adresse'].errors?.pattern">
+            Lettres et chiffres uniquement.
+        </div>
+    </div>
+    <!-- /////////////////////////////////////// -->
+      </div>
+      <div class="zip-ville form-group">
+        <div class="zip">
+          <label class="rouge">Code postal</label>
+          <input type="text" maxlength="6" class="form-control" id="codePostal" formControlName="codePostal">
+          <!-- /////////////////////////////////////// -->
+        <div *ngIf="signupForm.controls['codePostal'].invalid && (signupForm.controls['codePostal'].dirty || signupForm.controls['codePostal'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="signupForm.controls['codePostal'].errors?.maxlength">
+            5 caracteres maximum.
+        </div>
+        <div *ngIf="signupForm.controls['codePostal'].errors?.pattern">
+            Chiffres uniquement.
+        </div>
+    </div>
+    <!-- /////////////////////////////////////// -->
+        </div>
+        <div class="ville">
+          <label class="rouge">Ville</label>
+          <input type="text" maxlength="256" class="form-control" id="ville" formControlName="ville">
+          <!-- /////////////////////////////////////// -->
+        <div *ngIf="signupForm.controls['ville'].invalid && (signupForm.controls['ville'].dirty || signupForm.controls['ville'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="signupForm.controls['ville'].errors?.maxlength">
+            255 caracteres maximum.
+        </div>
+        <div *ngIf="signupForm.controls['ville'].errors?.pattern">
+            Lettres uniquement.
+        </div>
+    </div>
+    <!-- /////////////////////////////////////// -->
+        </div>
+      </div>
+      <div class="d-flex justify-content-end bouton form-group">
+        <button class="btn btn-primary mt-3" type="submit" [disabled]="signupForm.invalid">Créer mon compte</button><!--bouton desactivé tant que le regex des infos n'est pas bon-->
+      </div>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+  </div>
+</div>

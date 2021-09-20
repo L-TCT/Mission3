@@ -1,0 +1,57 @@
+<div class="menu">
+    <app-filtre (onChange)="onFilterChanged($event)"></app-filtre>
+    <app-tri (onChange)="onOrderChanged($event)"></app-tri>
+</div>
+<p id="not-found" class="disabled">aucun resultat trouvé !!</p>
+<div class="d-flex justify-content-center main">
+    <div class="d-flex flex-column main">
+        <div class="d-flex flex-wrap justify-content-around list-card">
+            <div class="card" (mouseenter)="showDescription(i)" (mouseleave)="hideDescription(i)"
+                *ngFor="let comic of comics | paginate: { itemsPerPage: 9, currentPage: p }; let i = index">
+                <img class="card-img-top click " (click)="onViewComic(comic.id)" src="{{ comic.photo }}" />
+                <div class="description" id="{{i}}">
+                    <div class="click" (click)="onViewComic(comic.id)">
+                        <p class="card-title">{{ comic.titre }}</p>
+                        <div class="etat">
+                            <p class="card-text disponible" *ngIf="comic.disponibilite == 1">Disponible</p>
+                            <p class="card-text indisponible" *ngIf="comic.disponibilite == 2">Indisponible</p>
+                            <p class="card-text precommande" *ngIf="comic.disponibilite == 3">Précommande</p>
+                        </div>
+                        <p class="card-text">{{ comic.prix }} €TTC</p>
+                        <p class="card-text note" *ngIf="comic.avis == 5">★★★★★</p>
+                        <p class="card-text note" *ngIf="comic.avis == 4">★★★★</p>
+                        <p class="card-text note" *ngIf="comic.avis == 3">★★★</p>
+                        <p class="card-text note" *ngIf="comic.avis == 2">★★</p>
+                        <p class="card-text note" *ngIf="comic.avis == 1">★</p>
+                    </div>
+                  
+                    <a *ngIf="comic.disponibilite != 2" (click)="enableModal(comic)" class="d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="4vh" height="4vh" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="#BE2537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></g></svg></a>
+                    <a *ngIf="comic.disponibilite == 2" class="d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="4vh" height="4vh" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="#BE2537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></g></svg></a>
+
+                </div>
+                <div class="card-body text-center click" (click)="onViewComic(comic.id)">
+                    <p class="card-title">{{ comic.titre }}</p>
+                    <p class="card-text disponible" *ngIf="comic.disponibilite == 1">Disponible</p>
+                    <p class="card-text indisponible" *ngIf="comic.disponibilite == 2">Indisponible</p>
+                    <p class="card-text precommande" *ngIf="comic.disponibilite == 3">Précommande</p>
+                    <p class="card-text">{{ comic.prix }} € TTC</p>
+                    <p class="card-text note" *ngIf="comic.avis == 5">★★★★★</p>
+                    <p class="card-text note" *ngIf="comic.avis == 4">★★★★</p>
+                    <p class="card-text note" *ngIf="comic.avis == 3">★★★</p>
+                    <p class="card-text note" *ngIf="comic.avis == 2">★★</p>
+                    <p class="card-text note" *ngIf="comic.avis == 1">★</p>
+
+                    <img *ngIf="comic.disponibilite != 2" class="cart" (click)="enableModal(comic)" src="assets/img/panier.png" width="45px"
+                        height="45px" />
+
+                    <img *ngIf="comic.disponibilite == 2" class="cart" src="assets/img/panier.png" width="45px"
+                    height="45px" />
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="onPageChange($event)" previousLabel="" nextLabel=""
+                class="my-pagination"></pagination-controls>
+        </div>
+
+    </div>

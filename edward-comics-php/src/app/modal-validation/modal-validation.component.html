@@ -1,0 +1,22 @@
+
+<div [className]="active ? 'modalComponent' : 'hiddenModal'">
+<div class="modalBackDrop" (click)='disableModal()'></div>
+    <div class="container" *ngIf = "comic != null">
+        <h2>Article ajouté</h2>
+        <div class="cardContainer">
+            <div>
+                <img class="photo" src="{{comic.photo}}">
+            </div>
+            <div> 
+                <h3>{{comic.titre}}</h3>
+                <h5>{{comic.scenariste}}</h5>
+                <h5>{{comic.univers}}</h5>
+            </div>
+            <div>
+                <h2>{{comic.prix}} €</h2>
+            </div>
+        </div>
+        <a routerLink="/panier" (click)="disableModal()" class="btn btn-primary mt-1">Voir mon panier</a>
+        <button class="btn btn-primary mt-1" (click)='disableModal()'>Continuer vos achats</button>
+    </div>
+</div>

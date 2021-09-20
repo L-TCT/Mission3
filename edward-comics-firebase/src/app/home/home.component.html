@@ -1,0 +1,16 @@
+<app-carousel-image [config]="{ theme: 'nouveaute', valeur: true }"></app-carousel-image>
+<img src="assets/promo.png" width="100%" (click)="onFilterComic('promotion', true, 'boolean')"/>
+<app-carousel-image [config]="{ theme: 'selection', valeur: true }"></app-carousel-image>
+<div class="d-flex flex-wrap justify-content-center img-theme">
+    <img src="assets/batman.png" (click)="onFilterComicPerso('heros', 'Batman')"/>
+    <img src="assets/justiceleague.png" (click)="onFilterComicPerso('heros', 'Justiceleague')"/>
+    <img src="assets/superman.png" (click)="onFilterComicPerso('heros', 'Superman')"/>
+    <img src="assets/spiderman.png" (click)="onFilterComicPerso('heros', 'Spiderman')"/>
+    <img src="assets/avengers.png" (click)="onFilterComicPerso('heros', 'Avengers')"/>
+    <img src="assets/deadpool.png" (click)="onFilterComicPerso('heros', 'Deadpool')"/>
+</div>
+<app-carousel-card [config]="{ theme: 'univers', valeur: 'DC Comics' }"></app-carousel-card>
+<app-carousel-card [config]="{ theme: 'univers', valeur: 'Marvel' }"></app-carousel-card>
+<img src="assets/comicon.png" width="100%"/>
+<app-carousel-card [config]="{ theme: 'categorie', valeur: 'Super-héros' }"></app-carousel-card>
+<app-carousel-card [config]="{ theme: 'categorie', valeur: 'Super-vilains'}"></app-carousel-card>

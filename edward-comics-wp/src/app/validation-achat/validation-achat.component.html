@@ -1,0 +1,120 @@
+<div class="grid-container">
+    <div class="Panier">
+        <h2 class="text-center rouge">Récapitulatif du panier</h2>
+        <hr class="rouge">
+        <div class="panier d-flex flex-column align-items-center">
+            <div class="cardContainer" *ngFor="let comic of cart; let i = index">
+                <div>
+                    <img class="photo" src="{{comic.photo}}">
+                </div>
+                <div class="description">
+                    <h3>{{comic.titre}}</h3>
+                    <h5>{{comic.scenariste}}</h5>
+                </div>
+                <div class="d-flex flex-row flex-nowrap justify-content-between">
+                    <h2 class="quantity">{{comic.quantite}}</h2>
+                </div>
+                <div>
+                    <h2>{{comic.prix}} € TTC</h2>
+                </div>
+            </div>
+            <div class="total d-flex">
+                <p class="total-prix">Total: {{total}} € TTC</p>
+                <p class="total-item">Nombre d'article: {{nbrItem}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="factu-bleu-carte">
+        <div class="Factu">
+            <div class="facturation sacha-flex">
+                <h2 class="text-center rouge">Récapitulatif de facturation</h2>
+                <hr class="rouge">
+                <div class="d-flex justify-content-between adresse form-group">
+                    <div>{{ infoUser.prenom }} {{ infoUser.nom }}<br>{{ infoUser.adresse }}<br>{{
+                        infoUser.codePostal }} {{ infoUser.ville }}</div>
+                    <button class="btn btn-primary mt-5" routerLink="/detail-compte/facturation">Modifier ></button>
+                </div>
+            </div>
+        </div>
+        <div class="carte-bleu">
+            <div class="Paiement sacha-flex">
+                <h2 class="text-center rouge">Information bancaire</h2>
+                <hr class="rouge">
+                <form [formGroup]="formCarte" (ngSubmit)="updateCarte()">
+                    <div class="grid-container-2">
+                        <div class="nom">
+                            <label class="rouge">Nom du propriétaire</label>
+                            <input maxlength="256" type="text" class="form-control" id="proprietaire"
+                                formControlName="proprietaire" value="{{ infoUser.proprietaireCarte }}">
+                            <!-- /////////////////////////////////////// -->
+                            <div *ngIf="formCarte.controls['proprietaire'].invalid && (formCarte.controls['proprietaire'].dirty || formCarte.controls['proprietaire'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="formCarte.controls['proprietaire'].errors?.maxlength">
+                                    255 caracteres maximum.
+                                </div>
+                                <div *ngIf="formCarte.controls['proprietaire'].errors?.pattern">
+                                    Lettres uniquement.
+                                </div>
+                            </div>
+                            <!-- /////////////////////////////////////// -->
+                        </div>
+                        <div class="numero">
+                            <label class="rouge">Numero de carte</label>
+                            <input maxlength="17" type="text" class="form-control" id="nbCarte"
+                                formControlName="nbCarte" value="{{ infoUser.numeroCarte }}">
+                            <!-- /////////////////////////////////////// -->
+                            <div *ngIf="formCarte.controls['nbCarte'].invalid && (formCarte.controls['nbCarte'].dirty || formCarte.controls['nbCarte'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="formCarte.controls['nbCarte'].errors?.maxlength">
+                                    16 caracteres maximum.
+                                </div>
+                                <div *ngIf="formCarte.controls['nbCarte'].errors?.pattern">
+                                    Chiffres uniquement.
+                                </div>
+                            </div>
+                            <!-- /////////////////////////////////////// -->
+                        </div>
+                        <div class="crypto-expi">
+                            <div class="expi">
+                                <label class="rouge">Date d'expiration</label>
+                                <input maxlength="12" type="text" class="form-control" id="expiration"
+                                    formControlName="expiration" value="{{ infoUser.dateCarte }}">
+                                <!-- /////////////////////////////////////// -->
+                                <div *ngIf="formCarte.controls['expiration'].invalid && (formCarte.controls['expiration'].dirty || formCarte.controls['expiration'].touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="formCarte.controls['expiration'].errors?.maxlength">
+                                        7 caracteres maximum.
+                                    </div>
+                                    <div *ngIf="formCarte.controls['expiration'].errors?.pattern">
+                                        Mauvais format (MM/YYY).
+                                    </div>
+                                </div>
+                                <!-- /////////////////////////////////////// -->
+                            </div>
+                            <div class="crypto">
+                                <label class="rouge">Cryptogramme</label>
+                                <input maxlength="4" type="text" class="form-control" id="cryptogramme"
+                                    formControlName="cryptogramme" value="{{ infoUser.cryptogramme }}">
+                                <!-- /////////////////////////////////////// -->
+                                <div *ngIf="formCarte.controls['cryptogramme'].invalid && (formCarte.controls['cryptogramme'].dirty || formCarte.controls['cryptogramme'].touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="formCarte.controls['cryptogramme'].errors?.maxlength">
+                                        3 caracteres maximum.
+                                    </div>
+                                    <div *ngIf="formCarte.controls['cryptogramme'].errors?.pattern">
+                                        Chiffres uniquement.
+                                    </div>
+                                </div>
+                                <!-- /////////////////////////////////////// -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <button type="submit" (click)="resetPanier()" class="btn btn-primary mb-3 bouton-pay"
+        routerLink="/paiement">Payer</button>
+</div>

@@ -1,0 +1,132 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.3fr 0.07fr 0.45fr 0.3fr 0.07fr;
+    gap: 5px 0px;
+    grid-template-areas:
+      "image"
+      "infos"
+      "bouton"
+      "resume"
+      "caracteristiques"
+      "avis";
+    background-color: #c4c4c448;
+    width: 95%;
+    padding: 3%;
+    margin: auto;
+  }
+  
+  .image { 
+      grid-area: image; 
+      width: 100%;
+      display: flex;
+    }
+
+  img {
+    width: 100%
+  }
+  
+  .infos { 
+      grid-area: infos; 
+    }
+  
+  .bouton { 
+      grid-area: bouton; 
+    }
+  
+  .resume { 
+      grid-area: resume; 
+      overflow-wrap: anywhere;
+    }
+  
+  .caracteristiques { 
+      grid-area: caracteristiques; 
+    }
+  
+  .avis { 
+      grid-area: avis; 
+    }
+
+    .disponible {
+      color: white;
+      background-color: rgb(0, 204, 0);
+      padding: 5px 5px 5px 0px;
+      margin-left: 20px;
+      border-radius: 2px;
+  }
+  .indisponible {
+      color: white;
+      background-color: red;
+      padding: 5px 5px 5px 0px;
+      margin-left: 20px;
+      border-radius: 2px;
+  }
+  .precommande {
+      color: white;
+      background-color: orange;
+      padding: 5px 5px 5px 0px;
+      margin-left: 20px;
+      border-radius: 2px;
+  }
+ 
+  .note {
+    color: gold;
+    font-size: 50px;
+    text-shadow: rgb(0, 0, 0) 1px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
+  }
+
+  .titreprix {
+    font-weight: bold;
+    font-size: 34px;
+  }
+
+  .textResume {
+    line-height: normal;
+    font-size: 0.8rem;
+  }
+
+  tbody {
+    font-size: 0.8rem;
+  }
+ 
+
+
+  @media screen and (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 40px 250px 150px;
+    gap: 0px 25px;
+    grid-template-areas:
+      "image infos"
+      "image bouton"
+      "image resume"
+      "avis caracteristiques";
+    background-color: #c4c4c448;
+    width: 95%;
+    padding: 3%;
+    margin: auto;
+  }
+   
+ .avis {
+   place-self: center;
+ }
+
+ .caracteristiques {
+   align-self: center;
+ }
+
+ .infos p {
+   margin-bottom: 0;
+ }
+    
+  }
+
+  @media screen and (min-width: 1280px) {
+    .image{
+      width: 70%;
+    }
+    .textResume{
+      width: 30vw;
+    }
+  }

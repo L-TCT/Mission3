@@ -1,0 +1,42 @@
+.fond {
+    background-color: #c4c4c446;
+    padding: 10px;
+    margin: 10px;
+}
+
+.bandeau {
+    background-color: #4D4747;
+    color: white;
+    padding-top: 3%;
+}
+.rouge{
+    color: #BE2537;
+}
+@media only screen and (min-device-width : 768px) { /* tablette */
+    .formulaire{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+@media only screen and (min-device-width : 1280px) { /* ordinateur */
+    .fond{
+        width: 50%;
+    }
+    .formulaire{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .compte{
+        height: 100px;
+        width: 250px;
+        font-size: 28px;
+    }
+    .conteneur-global{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fond{
+        height: 360px;
+    }
+}

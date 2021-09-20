@@ -1,0 +1,213 @@
+h1{
+    text-align: center;
+    color:#BE2537;
+    padding-bottom: 2vh;
+    font-family: "radio";
+    text-transform: capitalize;
+}
+.arrow {
+    width: 5vh;
+    height: 5vh;
+    position: absolute;
+    top: 33%;
+}
+.left{
+    left: 5%;
+}
+.right{
+    right: 5%;
+}
+.slides-container {
+    display: flex;
+    align-items: center;
+  }
+  .carousel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5vh;
+  }
+  .item {
+    width: 33vw;
+    height: 30vh;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: url('/assets/cursor.cur'), pointer;
+  }
+  .hide {
+    display: none;
+  }
+  .item:nth-child(1) {
+    left: 5%;
+    transform: scale(0.85);
+    z-index: -1;
+    opacity: 50%;
+  }
+  
+  .item:nth-child(3) {
+    left: -5%;
+    transform: scale(0.85);
+    z-index: -1;
+    opacity: 50%;
+  }
+  
+  @media screen and (min-width: 768px){
+    .item{
+        width: 30vw;
+        height: 40vh;
+    }
+  }
+
+
+@media screen and (min-width: 1280px){
+    .item{
+        width: 14vw;
+        height: 40vh;
+    }
+    .item:nth-child(3) {
+        left: 0;
+        transform: scale(1);
+        z-index: 0;
+        opacity: 1;
+    }
+    .item:nth-child(4n + 1) {
+        transform: scale(0.75);
+        z-index: -2;
+        opacity: 0.25;
+      }
+      .item:nth-child(2n) {
+        transform: scale(0.85);
+        z-index: -1;
+        opacity: 0.5;
+      }
+      .move-to-position5-from-left {
+        animation: moveToP5Left 0.6s linear;
+    }
+    
+    .move-to-position4-from-left {
+        animation: moveToP4Left 0.6s linear;
+    }
+    
+    .move-to-position3-from-left {
+        animation: moveToP3Left 0.6s linear;
+    }
+    
+    .move-to-position2-from-left {
+        animation: moveToP2Left 0.6s linear;
+    }
+    
+    
+    .move-to-position1-from-left{
+        animation: moveToP1Left 0.6s linear;
+        
+    }
+    
+    .move-to-position5-from-right{
+        animation: moveToP5Right 0.6s linear;
+    }
+    .move-to-position4-from-right{
+        animation: moveToP4Right 0.6s linear;
+    }
+    .move-to-position3-from-right{
+        animation: moveToP3Right 0.6s linear;
+    }
+    .move-to-position2-from-right{
+        animation: moveToP2Right 0.6s linear;
+    }
+    .move-to-position1-from-right{
+        animation: moveToP1Right 0.6s linear;
+    }
+}
+
+@keyframes moveToP5Left {
+    from {
+        transform: scale(0.65) translateX(50%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+@keyframes moveToP4Left {
+    from {
+        transform: scale(0.75) translateX(50%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP3Left {
+    from {
+        transform: scale(0.75);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes moveToP2Left {
+    from {
+        transform: scale(0.75) translateX(-50%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP1Left {
+    from {
+        transform: scale(0.65) translateX(-50%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+
+@keyframes moveToP1Right {
+    from {
+        transform: scale(0.65) translateX(-50%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}
+
+@keyframes moveToP2Right {
+    from {
+        transform: scale(0.75) translateX(-50%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP3Right {
+    from {
+        transform: scale(0.75);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes moveToP4Right {
+    from {
+        transform: scale(0.75) translateX(50%);
+    }
+    to {
+        transform: scale(0.85) translateX(0);
+    }
+}
+
+@keyframes moveToP5Right {
+    from {
+        transform: scale(0.65) translateX(50%);
+    }
+    to {
+        transform: scale(0.75) translateX(0);
+    }
+}

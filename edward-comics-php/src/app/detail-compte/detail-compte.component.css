@@ -1,0 +1,164 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "info-perso" "nom-prenom" "mail-tel" "mdp-mdpconfirm" "info-factu" "adresse" "zip-ville" "bouton";
+}
+
+.info-perso {
+    grid-area: info-perso;
+}
+
+.nom-prenom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 5px;
+    grid-template-areas: "nom prenom";
+    grid-area: nom-prenom;
+}
+
+.nom {
+    grid-area: nom;
+}
+
+.prenom {
+    grid-area: prenom;
+}
+
+.mail-tel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 5px;
+    grid-template-areas: "email tel";
+    grid-area: mail-tel;
+}
+
+.email {
+    grid-area: email;
+}
+
+.tel {
+    grid-area: tel;
+}
+
+.mdp-mdpconfirm {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 5px;
+    grid-template-areas: "mot-de-passe mot-de-passe-confirm";
+    grid-area: mdp-mdpconfirm;
+}
+
+.mot-de-passe {
+    grid-area: mot-de-passe;
+}
+
+.mot-de-passe-confirm {
+    grid-area: mot-de-passe-confirm;
+}
+
+.info-factu {
+    grid-area: info-factu;
+}
+
+.adresse {
+    grid-area: adresse;
+}
+
+.zip-ville {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 5px;
+    grid-template-areas: "zip ville";
+    grid-area: zip-ville;
+}
+
+.zip {
+    grid-area: zip;
+}
+
+.ville {
+    grid-area: ville;
+}
+
+.bouton {
+    grid-area: bouton;
+}
+
+.fond {
+    background-color: #c4c4c446;
+    padding: 10px;
+    margin: 10px;
+}
+
+.bandeau {
+    background-color: #4D4747;
+    color: white;
+    padding-top: 3%;
+}
+
+.rouge {
+    color: #BE2537;
+}
+.img-droite{
+    display: none;
+}
+.btn-modif-mdp{
+    width: 30%;
+}
+.maj{
+    width: 97%;
+    margin-left: 7px;
+}
+@media only screen and (min-device-width : 768px) { /* tablette */
+    .grid-container{
+        width: 100%;
+        margin: auto;
+    }
+    form{
+        width: 95%;
+        margin: 0;
+    }
+    .milieu{
+        display: flex;
+        justify-content: center;
+    }
+    .fond{
+        width: 100%;
+        margin: 0;
+    }
+    .maj{
+        width: 50%;
+    }
+    .bandeau{
+        width: 90%;
+    }
+}
+@media only screen and (min-device-width : 1280px) { /* ordinateur */
+    form{
+        width: 100%;
+        margin: 0;
+    }
+    .grid-container{
+        width: 40%;
+    }
+    .bandeau{
+        width: 40%;
+    }
+    .milieu{
+        display: flex;
+        justify-content: center;
+    }
+    .master{
+        width: 100%;
+    }
+    .maj{
+        width: 50%;
+        margin-left: 7px;
+    }
+}

@@ -1,0 +1,54 @@
+<div class="d-flex flex-column justify-content-center align-items-center master">
+    <form [formGroup]="updateForm" (ngSubmit)="updateUser()">
+        <div class="fond">
+            <h2 class="text-center rouge">Mon compte</h2>
+            <div class="milieu">
+                <div class="d-flex flex-column align-items-center justify-content-center bandeau">
+                    <h3>Vos informations personnelle</h3>
+                    <p>Vous êtes le héros de votre propre vie !</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="info-perso">
+                    <h6 class="rouge text-center mt-3">Informations personnelle</h6>
+                </div>
+                <div class="nom-prenom form-group">
+                    <div class="nom">
+                        <label class="rouge">Nom</label>
+                        <input type="text" class="form-control" id="nom" value="{{ infoUser.nom }}"
+                            formControlName="nom">
+                    </div>
+                    <div class="prenom">
+                        <label class="rouge">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" value="{{ infoUser.prenom }}"
+                            formControlName="prenom">
+                    </div>
+                </div>
+                <div class="mail-tel form-group">
+                    <div class="email">
+                        <label class="rouge" for="email">Adresse mail</label>
+                        <input type="text" id="email" class="form-control" value="{{ infoUser.email }}" disabled>
+                    </div>
+                    <div class="tel">
+                        <label class="rouge">Téléphone</label>
+                        <input type="text" class="form-control" id="telephone" value="{{ infoUser.telephone }}"
+                            formControlName="telephone">
+                    </div>
+                </div>
+                <div class="info-factu form-group">
+                    <h6 class="rouge text-center mt-3">Informations facturation et de paiement</h6>
+                </div>
+                <div class="d-flex justify-content-between adresse form-group">
+                    <div>{{ infoUser.prenom }} {{ infoUser.nom }}<br>{{ infoUser.adresse }}<br>{{
+                        infoUser.codePostal }} {{ infoUser.ville }}</div>
+                    <button class="btn btn-primary mt-5" routerLink="facturation">Modifier ></button>
+                </div>
+
+            </div>
+        </div>
+        <div class="milieu">
+            <button type="submit" class="btn btn-primary mb-3 mt-2 maj" [disabled]="updateForm.invalid">Mettre à jour</button>
+        </div>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+</div>

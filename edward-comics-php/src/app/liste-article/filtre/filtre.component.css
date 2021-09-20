@@ -1,0 +1,9 @@
+.filtre {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+button {
+    margin-right: 1vw;
+    background-color: #BE2537;
+}

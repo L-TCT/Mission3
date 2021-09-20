@@ -1,0 +1,6 @@
+@media screen and (min-width: 1280px) {
+    .main{
+        width: 70vw !important;
+        margin: auto;
+    }
+}

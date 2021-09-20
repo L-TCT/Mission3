@@ -1,0 +1,85 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 0px;
+    grid-template-areas: 
+    "LogoFooter" 
+    "Apropos" 
+    "Contacts" 
+    "Adresse" 
+    "Horaires"
+    "Meteo";
+    background-color: #4D4747;
+}
+
+.LogoFooter {
+    grid-area: LogoFooter;
+    display: flex;
+    justify-content: center;
+}
+.logo-du-footer{
+    width: 147px;
+    height: 112px;
+}
+
+.Apropos {
+    grid-area: Apropos;
+    margin-left: 5%;
+}
+
+.Contacts {
+    grid-area: Contacts;
+    margin-left: 5%;
+}
+
+.Adresse {
+    grid-area: Adresse;
+    margin-left: 5%;
+}
+
+.Horaires {
+    grid-area: Horaires;
+    margin-left: 5%;
+}
+
+.Meteo {
+    grid-area: Meteo;
+    margin-left: 5%;
+}
+
+h3 {
+    color: white;
+}
+li {
+    color: #E84B4B;
+    font-weight: bold;
+}
+.rouge{
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+@media screen and (min-width: 768px){
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px 0px;
+        grid-template-areas: 
+        "LogoFooter Apropos Contacts" 
+        "Adresse Horaires Meteo";
+        background-color: #4D4747;
+    }
+    .logo-du-footer{
+        width: 230px;
+        height: 150px;
+    }
+    .LogoFooter {
+        grid-area: LogoFooter;
+        display: flex;
+        justify-content: unset;
+    }
+
+}

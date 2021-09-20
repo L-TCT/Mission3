@@ -1,0 +1,10 @@
+<h1>{{config.theme}}</h1>
+<div class="carousel">
+    <button class="btn btn-danger arrow left" (click)="shiftLeft()">&lt;</button>
+    <div class="slides-container">
+      <div class="item" *ngFor="let item of getOrderedItems(); let i = index" (click)= "onViewComic(item.id)" class="{{ getSlideClass(i) }}">
+        <img src=" {{item.photo }} "  width="100%" height="100%"/>
+      </div>
+    </div>
+    <button class="btn btn-danger arrow right" (click)=" shiftRight()">&gt;</button>
+  </div>

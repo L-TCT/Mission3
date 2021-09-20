@@ -1,0 +1,15 @@
+.bloc {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 5%;
+}
+
+.element {
+    margin: 2%;
+}
+
+.image {
+    width: 30%;
+}

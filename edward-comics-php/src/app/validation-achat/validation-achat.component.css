@@ -1,0 +1,238 @@
+.rouge {
+  color: #BE2537;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 170px 310px;
+  gap: 0px 0px;
+  grid-template-areas: "Panier" "Factu" "carte-bleu";
+}
+
+.Panier {
+  grid-area: Panier;
+}
+
+.Factu {
+  grid-area: Factu;
+}
+
+.carte-bleu {
+  grid-area: carte-bleu;
+}
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "nom" "numero" "crypto-expi";
+}
+
+.nom {
+  grid-area: nom;
+}
+
+.numero {
+  grid-area: numero;
+}
+
+.crypto-expi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 5px;
+  grid-template-areas: "expi crypto";
+  grid-area: crypto-expi;
+}
+
+.expi {
+  grid-area: expi;
+}
+
+.crypto {
+  grid-area: crypto;
+}
+
+.photo {
+  height: 14vh;
+  width: 20vw;
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #BE2537;
+  justify-content: space-around;
+  width: 100vw;
+  height: 15vh;
+}
+
+.total {
+  display: flex;
+  width: 95vw;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.total-prix {
+  display: flex;
+  align-items: center;
+  border: 1px solid #BE2537;
+  justify-content: space-around;
+  width: 47.5vw;
+}
+
+.total-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #BE2537;
+  justify-content: space-around;
+  width: 47.5vw;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.btn-quantity {
+  height: 5vh;
+  width: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity {
+  height: 5vh;
+  width: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.description {
+  width: 25vw;
+  height: 15vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { /* Tablette */
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 25px;
+  }
+  .btn-quantity {
+    width: 5vh;
+    font-size: 30px;
+  }
+  .description {
+    height: 20vh;
+    width: 25vw;
+  }
+  .photo {
+    height: 19vh;
+  }
+  .cardContainer {
+    height: 20vh;
+  }
+  .total {
+    font-size: 35px;
+  }
+  .carte-bleu{
+    width: 70%;
+    margin: auto;
+  }
+  .Factu{
+    width: 70%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width:1280px) { /* ordinateur */
+  h2 {
+    font-size: 25px;
+  }
+  .btn-quantity {
+    width: 3vh;
+    height: 3vh;
+    font-size: 15px;
+  }
+  .description {
+    width: 20vw;
+  }
+  .photo {
+    height: 14vh;
+    width: 5vw;
+  }
+  .cardContainer {
+    height: 15vh;
+    width: 37.5vw;
+  }
+  .total {
+    font-size: 25px;
+    width: 35vw;
+  }
+  .quantity {
+    height: 3vh;
+    width: 3vh;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 15px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 310px;
+    gap: 15px 0px;
+    grid-template-areas: 
+      "Panier"
+      "Factu carte-bleu";
+  }
+  .factu-bleu-carte {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 310px 50px;
+    gap: 0px 15px;
+    grid-template-areas: 
+      "Factu carte-bleu";
+  }
+  .bouton-pay{
+    width: 30%;
+    font-size: 20px;
+  }
+  .carte-bleu{
+    width: 70%;
+  }
+  .Factu{
+    width: 70%;
+  }
+  .sacha-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

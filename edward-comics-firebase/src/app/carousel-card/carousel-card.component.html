@@ -1,0 +1,37 @@
+<h1>{{config.valeur}}</h1>
+<p-carousel [value]="comics" [numVisible]="4" [numScroll]="1" [circular]="true" [contentClass]="'card'" [responsiveOptions]="responsiveOptions">
+    <ng-template let-comic pTemplate="item">
+        <div class="product-item">
+            <div class="product-item-content">
+                <div class="card" >
+                    <div class="blocPhoto" (click)= "onViewComic(comic.id)">
+                        <img class="photo" src="{{comic.photo}}">
+                    </div>
+                
+                    <div class="div-titre" (click)= "onViewComic(comic.id)">
+                        <h3>{{comic.titre}}</h3>
+                    </div>
+                    <div class="div-disponibilite etat" (click)= "onViewComic(comic.id)">
+                        <p class="card-text disponible" *ngIf="comic.disponibilite == 1">Disponible</p>
+                        <p class="card-text indisponible" *ngIf="comic.disponibilite == 2">Indisponible</p>
+                        <p class="card-text precommande" *ngIf="comic.disponibilite == 3">Précommande</p>
+                    </div>
+                    <div class="div-prix" (click)= "onViewComic(comic.id)">
+                        <h4 class="prix">{{comic.prix}} €</h4>    
+                    </div>
+                    <div class="div-note">
+                        <p class="card-text note" *ngIf="comic.avis === 5">★★★★★</p>
+                        <p class="card-text note" *ngIf="comic.avis === 4">★★★★</p>
+                        <p class="card-text note" *ngIf="comic.avis === 3">★★★</p>
+                        <p class="card-text note" *ngIf="comic.avis === 2">★★</p>
+                        <p class="card-text note" *ngIf="comic.avis === 1">★</p>
+                    </div>
+                    <div class="div-panier" (click)="enableModal(comic)">
+                        <a class="logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="3vh" height="3vh" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="#BE2537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></g></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+

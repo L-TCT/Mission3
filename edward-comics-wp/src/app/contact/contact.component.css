@@ -1,0 +1,132 @@
+textarea {
+    resize: none;
+ }
+.info-perso {
+    grid-area: info-perso;
+}
+.message{
+    border-radius:5px;
+    border-color:#c4c4c4;
+}
+.nom {
+    grid-area: nom;
+}
+
+.prenom {
+    grid-area: prenom;
+}
+
+.email {
+    grid-area: email;
+}
+
+.tel {
+    grid-area: tel;
+}
+
+.mot-de-passe {
+    grid-area: mot-de-passe;
+}
+
+.mot-de-passe-confirm {
+    grid-area: mot-de-passe-confirm;
+}
+
+.info-factu {
+    grid-area: info-factu;
+}
+
+.adresse {
+    grid-area: adresse;
+}
+
+.zip-ville {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 5px;
+    grid-template-areas: "zip ville";
+    grid-area: zip-ville;
+}
+.expiration{
+    grid-area: expiration;
+}
+.cryptogramme{
+    grid-area: cryptogramme;
+}
+
+.zip {
+    grid-area: zip;
+}
+
+.ville {
+    grid-area: ville;
+}
+
+.bouton {
+    grid-area: bouton;
+}
+
+.fond {
+    background-color: #c4c4c446;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.bandeau {
+    background-color: #4D4747;
+    color: white;
+    padding-top: 3%;
+}
+
+.rouge {
+    color: #BE2537;
+}
+@media only screen and (min-device-width : 768px) { /* tablette */
+    .grid-container{
+        width: 100%;
+        margin: auto;
+    }
+    form{
+        width: 60%;
+        margin: auto;
+    }
+    .milieu{
+        display: flex;
+        justify-content: center;
+    }
+    .fond{
+        width: 100%;
+        margin: 0;
+    }
+    .maj{
+        width: 50%;
+    }
+    .bandeau{
+        width: 90%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .master{
+        margin: 10px;
+    }
+}
+@media only screen and (min-device-width : 1280px) { /* ordinateur */
+    form{
+        width: 100%;
+        margin: 0;
+    }
+    .grid-container{
+        width: 40%;
+    }
+    .bandeau{
+        width: 40%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .milieu{
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,7 @@
+
+<form [formGroup]="searchForm" (ngSubmit)="onSubmitForm()">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recherchez" aria-label="searchText" aria-describedby="basic-addon2" formControlName="searchText">
+        <span class="input-group-text" id="basic-addon2"><button type="submit"><img src="../assets/img/magnifier_105027.png" width="20px" height="20px"></button></span>
+    </div>
+</form>

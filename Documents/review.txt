@@ -1,0 +1,35 @@
+Mission
+
+besoin mal défini
+application de vente style click & collect ultra dynamique coté client
+affichage des articles, détails, regroupement par catégorie, panier, système de recherche et de compte utilisateur
+2 ou 3 semaines max
+responsive mobile first
+backend commun (nom du livre, auteur, editeur, age, genre, panier, compte utilisateur, format, images, prix, stock);
+
+Training
+
+-Picture box : opération 2 (pdf)
+-Appli météo : API
+prévision-méteo.ch = onglet service[JSON]
+openweathermap 
+
+file.get.content() PHP => Ajax (fetch) JS
+json.decode() PHP => JSON.parse() JS = res.response
+
+JSON.parse.document.body.text-content;
+
+
+Composant
+
+HTML template pour la structure
+typescript pour définir le comportement = class
+selecteur css composant = attribut, nom de balise
+style css pour modifier l'apparence
+
+C'est une balise (ou un attribut) personnalisé
+Entrées - Sorties (Input (i), Output (o))
+exemple balise input
+i = value, placeholder.. ATTRIBUT Parent vers l'enfant
+o = change, click... EVENEMENT Enfant vers le parent
+a

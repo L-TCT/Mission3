@@ -1,0 +1,16 @@
+<div class="dropdown">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown">
+      Tri
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><h6 class="dropdown-header">TITRE</h6></li>
+        <li><a class="dropdown-item" (click)="setOrder('titre')">de A à Z</a></li>
+        <li><a class="dropdown-item" (click)="setOrder('titre', true)">de Z à A</a></li>
+        <li><h6 class="dropdown-header">PRIX</h6></li>
+        <li><a class="dropdown-item" (click)="setOrder('prix')">du - au +</a></li>
+        <li><a class="dropdown-item" (click)="setOrder('prix', true)">du + au -</a></li>
+        <li><h6 class="dropdown-header">AVIS</h6></li>
+        <li><a class="dropdown-item" (click)="setOrder('avis')">de 1 à 5</a></li>
+        <li><a class="dropdown-item" (click)="setOrder('avis', true)">de 5 a 1</a></li>
+    </ul>
+  </div>

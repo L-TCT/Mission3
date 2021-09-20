@@ -1,0 +1,25 @@
+<div class="panier d-flex flex-column align-items-center">
+    <div class="cardContainer" *ngFor="let comic of cart; let i = index">
+        <div>
+            <img class="photo" src="{{comic.photo}}">
+        </div>
+        <div class="description"> 
+            <h3>{{comic.titre}}</h3>
+            <h5>{{comic.scenariste}}</h5>
+        </div>
+        <div class="d-flex flex-row flex-nowrap justify-content-between">
+            <button class="btn btn-danger btn-quantity" (click)="quantityMinus(comic)" [disabled]="comic.quantite == 1">-</button>
+            <h2 class="quantity">{{comic.quantite}}</h2>
+            <button class="btn btn-danger btn-quantity" (click)="quantityPlus(comic)">+</button>
+        </div>
+        <div class="prix">            
+            <svg (click)="deleteItem(comic)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="4vh" height="4vh" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);align-self: flex-end;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M12 4h3c.6 0 1 .4 1 1v1H3V5c0-.6.5-1 1-1h3c.2-1.1 1.3-2 2.5-2s2.3.9 2.5 2zM8 4h3c-.2-.6-.9-1-1.5-1S8.2 3.4 8 4zM4 7h11l-.9 10.1c0 .5-.5.9-1 .9H5.9c-.5 0-.9-.4-1-.9L4 7z" fill="#BE2537"/></svg>
+            <h2>{{comic.prix}} € TTC</h2>            
+        </div>
+    </div>
+    <div class="total d-flex">
+        <p class="total-prix">Total: {{total}} € TTC</p>
+        <p class="total-item">Nombre d'article: {{nbrItem}}</p>
+    </div>
+    <button class="btn btn-primary" routerLink="/validation-achat" [disabled]="nbrItem == 0">Validation achat</button>
+</div>

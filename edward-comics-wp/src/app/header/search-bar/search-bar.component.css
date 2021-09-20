@@ -1,0 +1,8 @@
+button {
+    border: none;
+}
+
+span, img {
+    cursor: url('/assets/cursor.cur'), pointer; 
+}
+

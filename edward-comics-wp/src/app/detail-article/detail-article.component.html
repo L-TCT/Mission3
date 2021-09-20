@@ -1,0 +1,60 @@
+<div class="grid-container" *ngIf="comic != null"> <!-- le ngIf permet d'activer l'affichage dès qu'il a l'info de la requête -->
+    <div class="image">
+        <img src="{{ comic.photo }}" />
+    </div>
+    <div class="infos">
+        <p class="titreprix"> {{ comic.titre }}</p>
+        <p>Par {{ comic.scenariste }} / {{ comic.dessinateur }}</p>
+        <p>ISBN: {{ comic.isbn }}</p>
+        <p *ngIf="comic.disponibilite == 1">Etat:<span class="card-text disponible"> Disponible</span></p>
+        <p *ngIf="comic.disponibilite == 2">Etat:<span class="card-text indisponible"> Indisponible</span></p>
+        <p *ngIf="comic.disponibilite == 3">Etat:<span class="card-text precommande"> Précommande</span></p> 
+        <p class="titreprix mt-1"> {{ comic.prix }} €TTC</p>
+    </div>
+    <div class="bouton">
+        <button class="btn btn-primary tailleBtn" [disabled]= "comic.disponibilite == 2"  (click)="enableModal(comic)" >Ajouter au panier</button>
+    </div>
+    <div class="resume">
+        <h4>Résumé</h4>
+        <p class="textResume" [outerHTML]="comic.resume"></p>
+    </div>
+    <div class="caracteristiques">
+        <h4>Caractéristiques</h4>
+        <table class="table mt">
+            <tbody>
+                <tr>
+                    <th>Scénariste</th>
+                    <td>{{ comic.scenariste }}</td>
+                </tr>
+                <tr>
+                    <th>Dessinateur</th>
+                    <td>{{ comic.dessinateur }}</td>
+                </tr>
+                <tr>
+                    <th>Date de parution</th>
+                    <td>{{ comic.date }}</td>
+                </tr>
+                <tr>
+                    <th>Editeur</th>
+                    <td>{{ comic.editeur }}</td>
+                </tr>
+                <tr>
+                    <th>Nbr de pages</th>
+                <td>{{ comic.nbrPages }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="avis">
+        <h4>Avis</h4>
+        <p class="note d-flex justify-content-center" *ngIf="comic.avis == 5">★★★★★</p>
+        <p class="note d-flex justify-content-center" *ngIf="comic.avis == 4">★★★★</p>
+        <p class="note d-flex justify-content-center" *ngIf="comic.avis == 3">★★★</p>
+        <p class="note d-flex justify-content-center" *ngIf="comic.avis == 2">★★</p>
+        <p class="note d-flex justify-content-center" *ngIf="comic.avis == 1">★</p>
+    </div>
+</div>
+ <div *ngIf="comic != null"> <!--  le ngIf permet d'activer l'affichage dès qu'il a l'info de la requête  -->
+    <app-carousel-card [config]="{ theme: 'univers', valeur: comic.univers  }"></app-carousel-card>
+</div> 
+

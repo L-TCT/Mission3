@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-center align-items-center master">
+    <div class="fond">
+        <h2 class="text-center rouge">Facturation</h2>
+        <div class="milieu">
+            <div class="d-flex align-items-center justify-content-center bandeau">
+                <h3>Vos information</h3>
+            </div>
+        </div>
+        
+        <div class="grid-container">
+            <form [formGroup]="updateFormFactu" (ngSubmit)="updateUser()">
+                <div class="d-flex flex-column mt-2 form-group">
+                    <label class="rouge">Civilité</label>
+                    <div class="d-flex align-items-center">
+                        <input type="radio" name="civilite" id="mme" value="mme" (click)="civiliteMme()" *ngIf="infoFacturationUser.civilite === 'mme'" checked>
+                        <input type="radio" name="civilite" id="mme" value="mme" (click)="civiliteMme()" *ngIf="infoFacturationUser.civilite != 'mme'">
+                        <label for="mme" class="rouge">&nbsp;Mme</label>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <input type="radio" name="civilite" id="mr" value="mr" (click)="civiliteMr()" *ngIf="infoFacturationUser.civilite === 'mr'" checked>
+                        <input type="radio" name="civilite" id="mr" value="mr" (click)="civiliteMr()" *ngIf="infoFacturationUser.civilite != 'mr'">
+                        <label for="mr" class="rouge">&nbsp;Mr</label>
+                    </div>
+                </div>
+                <div class="nom-prenom form-group">
+                    <div class="nom">
+                        <label class="rouge">Nom</label>
+                        <input type="text" class="form-control" id="nom" formControlName="nom" value="{{ infoFacturationUser.nom }}">
+                    </div>
+                    <div class="prenom">
+                        <label class="rouge">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" formControlName="prenom" value="{{ infoFacturationUser.prenom }}">
+                    </div>
+                </div>
+                <div class="adresse form-group">
+                    <label class="rouge">Adresse</label>
+                    <input type="text" class="form-control" id="adresse" formControlName="adresse" value="{{ infoFacturationUser.adresse }}">
+                </div>
+                <div class="zip-ville form-group">
+                    <div class="zip">
+                        <label class="rouge">Code postal</label>
+                        <input type="text" class="form-control" id="codePostal" formControlName="codePostal" value="{{ infoFacturationUser.codePostal }}">
+                    </div>
+                    <div class="ville">
+                        <label class="rouge">Ville</label>
+                        <input type="text" class="form-control" id="ville" formControlName="ville" value="{{ infoFacturationUser.ville }}">
+                    </div>
+                </div>
+                <hr class="rouge">
+                <div class="proprio-carte form-group">
+                    <label class="rouge">Nom du propriétaire</label>
+                    <input type="text" class="form-control" id="proprietaire" formControlName="proprietaire" value="{{ infoFacturationUser.proprietaireCarte }}">
+                </div>
+                <div class="nb-carte form-group">
+                    <label class="rouge">Numero de carte</label>
+                    <input type="text" class="form-control" id="nbCarte" formControlName="nbCarte" value="{{ infoFacturationUser.numeroCarte }}">
+                </div>
+                <div class="expira-crypto form-group">
+                    <div class="expiration">
+                        <label class="rouge">Date d'expiration</label>
+                        <input type="text" class="form-control" id="expiration" formControlName="expiration" value="{{ infoFacturationUser.dateCarte }}">
+                    </div>
+                    <div class="cryptogramme">
+                        <label class="rouge">Cryptogramme</label>
+                        <input type="number" class="form-control" id="cryptogramme" formControlName="cryptogramme" value="{{ infoFacturationUser.cryptogramme }}">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end bouton form-group">
+                    <button class="btn btn-primary mt-3" type="submit" [disabled]="updateFormFactu.invalid">Modifier ></button>
+                </div>
+            </form>
+            <p class="text-danger">{{ errorMessage }}</p>
+        </div>
+    </div>
+</div>
